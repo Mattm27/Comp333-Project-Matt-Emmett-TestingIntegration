@@ -1,67 +1,55 @@
 from unit_testing_sample_code import string_capitalizer, capitalize_list, integer_manipulator, manipulate_list
 import unittest
 
-class TestCapitalizer(unittest.TestCase):
-    def test_string(self):
-        tests = [("two", "TwO"),("C", "C"),("4", "FouR"),("", "")]
-        print("\nString Capitalizer Tests:")
-        for i, (input, expected_output) in enumerate(tests):
-            with self.subTest(f"Test {i}"):
-                result = string_capitalizer(input)
-            try:
-                self.assertEqual(result, expected_output)
-                print(f"Test {i} passed! `{result}` matches `{expected_output}`.")
-            except AssertionError:
-                print(f"Test {i} failed! Expected: `{expected_output}`. Got: `{result}`.")
+def test_string(test_num, expected, result):
+    try:
+        assert result == expected
+        print(f"Test {test_num} passed! `{result}` matches `{expected}`.")
+    except AssertionError:
+        print(f"Test {test_num} failed. Expected: `{expected}`. Got: `{result}`.")
 
-class ListCapitalizer(unittest.TestCase):
-    def test_string(self):
-        tests = [(["two", "C", "4", ""], ["TwO", "C", "FouR", ""])]
-        print("\nList Capitalizer Tests:")
-        for i, (input_list, expected) in enumerate(tests):
-            with self.subTest(f"Test {i}"):
-                result_list = capitalize_list(input_list)  # Unpack the tuple
-                print(f"Test {i}:")
+def test_strlist(test_num, expected, result):
+    for i, (result_part, expected_part) in enumerate(zip(result, expected)):
+        try:
+            assert result_part == expected_part
+            print(f"Part {i} in test {test_num} passed! `{result_part}` matches `{expected_part}`.")
+        except AssertionError:
+            print(f"Part {i} in test {test_num} failed. Expected: `{expected_part}`. Got: `{result_part}`.")
 
-                for j, (result_part, expected_part) in enumerate(zip(result_list, expected)):
-                    with self.subTest(f"Part {j} in test {i}"):
-                        try:
-                            self.assertEqual(result_part, expected_part)
-                            print(f"Part {j} in test {i} passed! `{result_part}` matches `{expected_part}`.")
-                        except AssertionError:
-                            print(f"Part {j} in test {i} failed. Expected: `{expected_part}`. Got: `{result_part}`.")
+def test_int(test_num, expected, result):
+    try:
+        assert result == expected
+        print(f"Test {test_num} passed! `{result}` matches `{expected}`.")
+    except AssertionError:
+        print(f"Test {test_num} failed. Expected: `{expected}`. Got: `{result}`.")
 
-class IntegerManip(unittest.TestCase): #Double Check Final Test
-    def test_string(self):
-        tests = [(66, 66),(2, 2),(6, 6),(0, 0),('three', 1)]
-        print("\nInteger Manipulator Tests:")
-        for i, (input_int, output_int) in enumerate(tests):
-            with self.subTest(f"Test {i}"):
-                result = integer_manipulator(input_int)
-            try:
-                self.assertEqual(result, output_int)
-                print(f"Test {i} passed! `{result}` matches `{output_int}`.")
-            except AssertionError:
-                print(f"Test {i} failed! Expected: `{output_int}`. Got: `{result}`.")
-            
-class ListManip(unittest.TestCase):
-    def test_string(self):
-        tests = [([66,2,6,0,'three'],[66,2,6,0,1])]
-        print("\nManipulate List Tests:")
-        for i, (inint_list, outint_list) in enumerate(tests):
-            with self.subTest(f"Test {i}"):
-                result_list = manipulate_list(inint_list)  # Unpack the tuple
-                print(f"Test {i}:")
+def test_intlist(test_num, expected, result):
+    for i, (result_part, expected_part) in enumerate(zip(result, expected)):
+        try:
+            assert result_part == expected_part
+            print(f"Part {i} in test {test_num} passed! `{result_part}` matches `{expected_part}`.")
+        except AssertionError:
+            print(f"Part {i} in test {test_num} failed. Expected: `{expected_part}`. Got: `{result_part}`.")
 
-                for j, (result_int, expected_int) in enumerate(zip(result_list, outint_list)):
-                    with self.subTest(f"Part {j} in test {i}"):
-                        try:
-                            self.assertEqual(result_int, expected_int)
-                            print(f"Part {j} in test {i} passed! `{result_int}` matches `{expected_int}`.")
-                        except AssertionError:
-                            print(f"Part {j} in test {i} failed. Expected: `{expected_int}`. Got: `{result_int}`.")
-                    
 if __name__ == "__main__":
-    unittest.main()
+    print("\nString Capitalizer Tests:")
+    test_string("0", "TwO", string_capitalizer("two"))
+    test_string("1", "C", string_capitalizer("c"))
+    test_string("2", "FouR", string_capitalizer(4))
+    test_string("3", "", string_capitalizer(""))
+
+    print("\nList Capitalizer Tests:")
+    test_strlist("0", ["TwO","C","FouR",""], capitalize_list(["two","c",4,""]))
+
+    print("\nInteger Manipulator Tests:")
+    test_int("0", 66, integer_manipulator(10))
+    test_int("1", 2, integer_manipulator(2))
+    test_int("2", 6, integer_manipulator(3))
+    test_int("3", 0, integer_manipulator(0))
+    test_int("4", 1, integer_manipulator("three"))
+
+    print("\nManipulate List Tests:")
+    test_intlist("0", [66,2,6,0,1], manipulate_list([10,2,3,0,"three"]))
+                    
 
 
