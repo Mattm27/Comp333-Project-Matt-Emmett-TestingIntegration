@@ -108,7 +108,7 @@ function Statistics() {
   
      const getListRatings = async () => {
         try {
-          const response = await fetch('http://129.133.185.47/Comp333-Project-Matt-Emmett-Mobile-App/lyrical-lounge-mobile/src/backend/index.php/rating/list');
+          const response = await fetch('http://10.0.0.196/Comp333-Project-Matt-Emmett-TestingIntegration/lyrical-lounge-mobile/src/backend/index.php/rating/list');
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }

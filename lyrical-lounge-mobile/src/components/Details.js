@@ -64,7 +64,7 @@ function Details({ route }) {
   const remove = async (id) => {
     try {
       console.log(id);
-      const response = await fetch('http://129.133.185.47/Comp333-Project-Matt-Emmett-Mobile-App/lyrical-lounge-mobile/src/backend/index.php/rating/delete', {
+      const response = await fetch('http://10.0.0.196/Comp333-Project-Matt-Emmett-TestingIntegration/lyrical-lounge-mobile/src/backend/index.php/rating/delete', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

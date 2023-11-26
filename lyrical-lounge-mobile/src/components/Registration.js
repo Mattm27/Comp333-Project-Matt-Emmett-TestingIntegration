@@ -20,7 +20,7 @@ const Registration = () => {
 
   const submit = async () => {
     try {
-      const response = await fetch("http://129.133.185.47/Comp333-Project-Matt-Emmett-Fullstack/lyrical-lounge/src/backEnd/index.php/user/create", {
+      const response = await fetch("http://10.0.0.196/Comp333-Project-Matt-Emmett-TestingIntegration/lyrical-lounge-mobile/src/backEnd/index.php/user/create", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

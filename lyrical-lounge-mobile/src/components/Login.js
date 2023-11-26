@@ -24,7 +24,7 @@ const Login = () => {
   const login = async (username, password) => {
     try {
       const response = await fetch(
-        'http://129.133.185.47/Comp333-Project-Matt-Emmett-Fullstack/lyrical-lounge/src/backEnd/index.php/user/login',
+        'http://10.0.0.196/Comp333-Project-Matt-Emmett-TestingIntegration/lyrical-lounge-mobile/src/backEnd/index.php/user/login',
         {
           method: 'POST',
           headers: {
