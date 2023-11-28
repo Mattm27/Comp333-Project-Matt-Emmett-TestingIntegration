@@ -10,7 +10,8 @@ import pytest
 
 @pytest.mark.string
 def test_string(input_str, expected_str):
-    assert string_capitalizer(input_str) == expected_str
+    actual = string_capitalizer(input_str)
+    assert string_capitalizer(input_str) == expected_str, (f"For {input_str}: expected {expected_str}, but got {actual}")
 
 @pytest.mark.parametrize("input_list, expected_list", [
     (["two", "c", 4, ""], ["TwO", "C", "FouR", ""]),
@@ -19,4 +20,5 @@ def test_string(input_str, expected_str):
 @pytest.mark.list
 def test_strlist(input_list, expected_list):
     result = capitalize_list(input_list)
-    assert result == expected_list
+    for i, (actual, expected) in enumerate(zip(result, expected_list)):
+        assert actual == expected, (f"For input_list[{i}]: expected {expected}, but got {actual}")
