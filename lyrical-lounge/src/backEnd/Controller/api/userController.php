@@ -72,7 +72,7 @@ class UserController extends BaseController
 
         if (!$strErrorDesc) {
             // Send a successful response
-            $this->sendOutput($responseData, array('Content-Type: application/json', 'HTTP/1.1 200 OK'));
+            $this->sendOutput($responseData, array('Content-Type: application/json', 'HTTP/1.1 201 OK'));
         } else {
             // Send an error response
             $this->sendOutput(json_encode(array('error' => $strErrorDesc)), array('Content-Type: application/json', $strErrorHeader));
@@ -95,9 +95,10 @@ class UserController extends BaseController
                 //checks to see is login was successful or not
                 if ($loggedIn) {
                     $responseData = json_encode(array('message' => 'User logged in successfully'));
+                    //$strErrorHeader = 'HTTP/1.1 201';
                 } else {
                     // Invalid username or password
-                    $responseData = json_encode(array('error' => 'Invalid username or password'));
+                    $responseData = json_encode(array('error' => 'Invalid username or password'));                
                 }
             } catch (Exception $e) {
                 $strErrorDesc = $e->getMessage() . ' Something went wrong! Please contact support.';
@@ -109,7 +110,12 @@ class UserController extends BaseController
         }
     
         if (!$strErrorDesc) {
-            $this->sendOutput($responseData, array('Content-Type: application/json', 'HTTP/1.1 200 OK'));
+            if ($loggedIn) {
+                $this->sendOutput($responseData, array('Content-Type: application/json', 'HTTP/1.1 201 OK'));
+            }
+            else {
+                $this->sendOutput($responseData, array('Content-Type: application/json', 'HTTP/1.1 202 OK'));
+            }
         } else {
             $this->sendOutput(json_encode(array('error' => $strErrorDesc)), array('Content-Type: application/json', $strErrorHeader));
         }
