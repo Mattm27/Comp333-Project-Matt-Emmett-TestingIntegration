@@ -23,5 +23,5 @@ jobs:
         working-directory: lyrical-lounge # Replace with your frontend directory
 
       - name: Run tests
-        run: npm test
+        run: npm run test
         working-directory: lyrical-lounge # Replace with your frontend directory
