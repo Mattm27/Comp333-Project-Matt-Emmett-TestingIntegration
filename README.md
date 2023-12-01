@@ -15,7 +15,7 @@ In order to run tests, run pytest -v
 pytest -v
 ```
 
-# Problem 3 Instructions
+# Problem 4 Instructions
 First, cd into the lyrical-lounge folder
 ```bash
 cd lyrical-lounge
