@@ -39,6 +39,7 @@ if __name__ == "__main__":
     test_string("3", "", string_capitalizer(""))
 
     print("\nList Capitalizer Tests:")
+    print("Test 0:")
     test_strlist("0", ["TwO","C","FouR",""], capitalize_list(["two","c",4,""]))
 
     print("\nInteger Manipulator Tests:")
@@ -49,6 +50,7 @@ if __name__ == "__main__":
     test_int("4", 1, integer_manipulator("three"))
 
     print("\nManipulate List Tests:")
+    print("Test 0:")
     test_intlist("0", [66,2,6,0,1], manipulate_list([10,2,3,0,"three"]))
                     
 
