@@ -71,7 +71,7 @@ First, cd into the lyrical-lounge folder
 cd lyrical-lounge
 ```
 
-Next install dependences by using
+Next install dependencies by using
 ```bash
 npm install
 ```
@@ -81,7 +81,7 @@ npm test
 ```
 
 # Problem 6 Generative AI
-For use of Generative AI I used chat GPT. I copied the tutorial for PHP unit testing into Chat GPT to train it and then I asked the followig prompt. 
+For the use of Generative AI I used chat GPT. I copied the tutorial for PHP unit testing into Chat GPT to train it and then I asked the following prompt. 
 
 ```bash
 Can you write the following unit test function?
@@ -89,8 +89,8 @@ Can you write the following unit test function?
 testGet_UserList: request the current user list with a GET request and check that the server responds with a 200 response code.
 ```
 
-I receieved the following response...
-
+I received the following response...
+```bash
 <?php
 
 use PHPUnit\Framework\TestCase;
@@ -118,7 +118,7 @@ class StackTest extends TestCase
    }
 }
 ?>
-
+```
 I altered this code slightly to have it work for my directory. I also later asked how I would pass data as a json through when I need to hardcode a new user to create. From there I just slightly edited each question as the code for each unit test was essentially the same with minor tweaks in the url abd the data being sent over. Overall chat gpt impressed me very much this semester with how useful it was for debugging code and for executing very small and specific functions. 
 
 
