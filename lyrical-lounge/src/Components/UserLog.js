@@ -21,6 +21,7 @@ const UserLog = () => {
   
   //login function 
   const login = async (username, password) => {
+    if(username != "" && password && ""){
     try {
       //sends username and password to backend and checks validity 
       const response = await axios.post(
@@ -42,6 +43,10 @@ const UserLog = () => {
     } catch (error) {
       console.error("Error logging in:", error);
     }
+  }
+  else {
+    NotificationManager.error('Invalid username or password!',"",1000);
+  }
   };
 
   return (

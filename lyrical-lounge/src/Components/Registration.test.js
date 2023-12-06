@@ -86,8 +86,8 @@ describe('Registration Page Rendering', () => {
     fireEvent.change(passwordInput, { target: { value: 'password1' } });
     fireEvent.change(confirmPasswordInput, { target: { value: 'password12' } });
     fireEvent.submit(screen.getByRole('button', { name: /Submit/i }));
-    await screen.findByText(/Passwords must match/i);
-    expect(screen.getByText(/Passwords must match/i)).toBeInTheDocument();
+    await screen.findByText("Passwords must match!");
+    expect(screen.getByText("Passwords must match!")).toBeInTheDocument();
   });
 
 });

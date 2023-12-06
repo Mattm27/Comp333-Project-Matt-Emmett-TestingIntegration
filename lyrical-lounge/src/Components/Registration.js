@@ -23,30 +23,36 @@ const Registration = () => {
 
       //sends username and password and confirmed password to backend where they will be added to the database
       const submit = async () => {
-        try {
-            console.log(username, password, confirm_password);
-            const response = await axios.post("http://localhost/Comp333-Project-Matt-Emmett-Fullstack/lyrical-lounge/src/backEnd/index.php/user/create",
-            { username: username, password: password, confirm_password: confirm_password }
-          );
-            console.log(response);
-            // notifications for different account creation scenarios
-            if(response.data.message === 'User created successfully')
-            {
-              NotificationManager.success('User successfully created, please go to login page!',"",1000);
-            }
-            else if(response.data.error === 'Password and confirm password must match')
-            {
-              NotificationManager.error('Passwords must match!',"",1000);
-            }
-            else if(response.data.error === 'Username already exists. Please choose a different username.')
-            {
-              NotificationManager.error('Username already exists!',"",1000);
-            }
+        if(password === confirm_password){
+            console.log('password and confirm match');
+          try {
+              console.log(username, password, confirm_password);
+              const response = await axios.post("http://localhost/Comp333-Project-Matt-Emmett-Fullstack/lyrical-lounge/src/backEnd/index.php/user/create",
+              { username: username, password: password, confirm_password: confirm_password }
+            );
+              console.log(response);
+              // notifications for different account creation scenarios
+              if(response.data.message === 'User created successfully')
+              {
+                NotificationManager.success('User successfully created, please go to login page!',"",1000);
+              }
+              else if(response.data.error === 'Password and confirm password must match')
+              {
+                NotificationManager.error('Passwords must match!',"",1000);
+              }
+              else if(response.data.error === 'Username already exists. Please choose a different username.')
+              {
+                NotificationManager.error('Username already exists!',"",1000);
+              }
 
-        } catch (error) {
-          console.error('Error submitting registration:', error);
-          throw error;
-        }
+          } catch (error) {
+            console.error('Error submitting registration:', error);
+            throw error;
+          }
+      }
+      else {
+        NotificationManager.error('Passwords must match!',"",1000);
+      }
     };
     
 

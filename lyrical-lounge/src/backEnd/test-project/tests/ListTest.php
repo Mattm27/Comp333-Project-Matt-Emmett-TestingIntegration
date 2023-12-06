@@ -55,7 +55,7 @@ class ListTest extends PHPUnit\Framework\TestCase
    public function testPost_LoginUser()
    {
       $postData = [
-         'username' => 'TestUser',
+         'username' => 'NewUserTest',
          'password' => 'newPassword',
       ];
 

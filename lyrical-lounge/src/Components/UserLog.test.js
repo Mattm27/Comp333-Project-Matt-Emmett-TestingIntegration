@@ -71,7 +71,7 @@ test("Username field is updated after input", () => {
     const usernameInput = screen.getByLabelText(/Username/i);
     const passwordInput = screen.getByLabelText(/Password/i);
     fireEvent.change(usernameInput, { target: { value: 'incorrectUser' } });
-    fireEvent.change(passwordInput, { target: { value: 'incorrectPassword' } });
+    fireEvent.change(passwordInput, { target: { value: '' } });
     fireEvent.submit(screen.getByRole('button', { name: /Login/i }));
     await screen.findByText(/Invalid username or password/i);
     expect(screen.getByText(/Invalid username or password/i)).toBeInTheDocument();
