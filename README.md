@@ -57,7 +57,7 @@ run the following
 ```bash
 cd lyrical-lounge
 cd src
-cd backend
+cd backEnd
 ```
 
 run the following command:
