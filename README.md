@@ -81,7 +81,7 @@ npm test
 ```
 
 # Problem 6 Generative AI
-For the use of Generative AI I used chat GPT. I copied the tutorial for PHP unit testing into Chat GPT to train it and then I asked the following prompt. 
+For the use of Generative AI we used Chat GPT. We copied the tutorial for PHP unit testing into Chat GPT to train it and then we asked the following prompt. 
 
 ```bash
 Can you write the following unit test function?
@@ -89,7 +89,7 @@ Can you write the following unit test function?
 testGet_UserList: request the current user list with a GET request and check that the server responds with a 200 response code.
 ```
 
-I received the following response...
+We received the following response...
 ```bash
 <?php
 
@@ -119,7 +119,7 @@ class StackTest extends TestCase
 }
 ?>
 ```
-I altered this code slightly to have it work for my directory. I also later asked how I would pass data as a json through when I need to hardcode a new user to create. From there I just slightly edited each question as the code for each unit test was essentially the same with minor tweaks in the url abd the data being sent over. Overall chat gpt impressed me very much this semester with how useful it was for debugging code and for executing very small and specific functions. 
+We altered this code slightly to have it work for my directory. We also later asked how we could pass data as a json through when we need to hardcode a new user to create. From there we just slightly edited each question as the code for each unit test was essentially the same with minor tweaks in the url and the data being sent over. Overall Chat GPT impressed us very much this semester with how useful it was for debugging code and for executing very small and specific functions. At this point in time, it seems that Chat GPT is useful as a way to supplement the work you are doing, especially in the scope of software engineering as it has not yet proved that it can completely output large projects as the result of a single prompt.   
 
 
 
