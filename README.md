@@ -154,7 +154,12 @@ class StackTest extends TestCase
 ```
 We altered this code slightly to have it work for my directory. We also later asked how we could pass data as a json through when we need to hardcode a new user to create. From there we just slightly edited each question as the code for each unit test was essentially the same with minor tweaks in the url and the data being sent over. Overall Chat GPT impressed us very much this semester with how useful it was for debugging code and for executing very small and specific functions. At this point in time, it seems that Chat GPT is useful as a way to supplement the work you are doing, especially in the scope of software engineering as it has not yet proved that it can completely output large projects as the result of a single prompt.   
 
-In the event something is not working for some reason please contact either eschillinger@wesleyan.edu
-or
+In the event something is not working for some reason please contact either eschillinger@wesleyan.edu or msmay@wesleyan.edu
 
-additionally here are screenshots to serve as proof all our tests are passing as expected...
+Additionally here are screenshots to serve as proof all our tests are passing as expected...
+![UnitTests](https://github.com/eschillinger7/Comp333-Project-Matt-Emmett-TestingIntegration/assets/144485976/044c9773-05b8-4a7b-bb2d-421fb0998fbb)
+![Pytest](https://github.com/eschillinger7/Comp333-Project-Matt-Emmett-TestingIntegration/assets/144485976/c8937433-43aa-4299-941d-9e0ac5ea13d9)
+![BackEndTests](https://github.com/eschillinger7/Comp333-Project-Matt-Emmett-TestingIntegration/assets/144485976/97fc52c9-5a7d-4552-97e8-34d9b9d23f53)
+![FrontEndTests](https://github.com/eschillinger7/Comp333-Project-Matt-Emmett-TestingIntegration/assets/144485976/2c748e9b-9271-4af4-913a-acb69a15669a)
+
+
