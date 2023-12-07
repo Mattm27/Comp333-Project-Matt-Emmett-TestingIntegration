@@ -162,4 +162,6 @@ Additionally here are screenshots to serve as proof all our tests are passing as
 ![BackEndTests](https://github.com/eschillinger7/Comp333-Project-Matt-Emmett-TestingIntegration/assets/144485976/97fc52c9-5a7d-4552-97e8-34d9b9d23f53)
 ![FrontEndTests](https://github.com/eschillinger7/Comp333-Project-Matt-Emmett-TestingIntegration/assets/144485976/2c748e9b-9271-4af4-913a-acb69a15669a)
 
+Work Split: 50/50
+
 
