@@ -72,6 +72,7 @@ run the following
 cd lyrical-lounge
 cd src
 cd backEnd
+cd test-project
 ```
 
 run the following command:
